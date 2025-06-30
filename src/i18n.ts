@@ -10,6 +10,11 @@ i18n
     .init({
         debug: true,
         fallbackLng: 'ru',
+        detection: {
+            order: ['localStorage', 'navigator'],
+            caches: ['localStorage'],
+            lookupLocalStorage: 'i18nextLng',
+        },
         interpolation: {
             escapeValue: false,
         },

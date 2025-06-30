@@ -1,5 +1,6 @@
 {
     "Отчёты": {
-        "Количество посетителей": "Number of visitors"
+        "Количество посетителей": "Number of visitors",
+        "Динамика посещаемости": "Attendance dynamics"
     }
 }
