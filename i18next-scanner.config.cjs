@@ -1,7 +1,7 @@
 module.exports = {
     input: [
-        "src/**/*.{js,jsx,ts,tsx}", 
-        "!src/**/*.spec.{js,jsx,ts,tsx}", 
+        "src/**/*.{js,jsx,ts,tsx}",
+        "!src/**/*.spec.{js,jsx,ts,tsx}",
         "!i18n/**",
         "!**/node_modules/**",
     ],
@@ -15,6 +15,10 @@ module.exports = {
         },
         trans: {
             extensions: [".js", ".jsx", ".ts", ".tsx"],
+        },
+        defaultValue: (lng, ns, key) => {
+            console.log({lng, ns, key})
+            return key.split('.').pop();
         },
         lngs: ["en", "ru", "tr"],
         ns: ["translation"],

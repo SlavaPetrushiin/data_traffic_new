@@ -18,6 +18,10 @@ i18n
         interpolation: {
             escapeValue: false,
         },
+        saveMissing: true,
+        missingKeyHandler: (lng, ns, key, fallbackValue) => {
+            console.log(`[i18n] Отсутствует ключ: ${key}. Значение по умолчанию: ${fallbackValue}`);
+        },
     });
 
 export default i18n;
