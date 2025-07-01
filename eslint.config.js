@@ -22,7 +22,7 @@ export default tseslint.config([
       globals: globals.browser,
     },
     plugins: {
-      'i18next': i18nextPlugin
+      'i18next': i18nextPlugin,
     },
     rules: {
       ...i18nextPlugin.configs.recommended.rules,
