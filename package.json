@@ -9,7 +9,14 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "toc": "i18next-resources-for-ts toc -i ./public/locales/ru -o ./src/@types/resources.ts",
-    "i18n:scan": "i18next-scanner --config i18next-scanner.config.cjs"
+    "i18n:scan": "i18next-scanner --config i18next-scanner.config.cjs",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "eslint"
+    ]
   },
   "dependencies": {
     "@tanstack/react-query": "^5.81.5",
@@ -32,8 +39,10 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^16.2.0",
+    "husky": "^9.1.7",
     "i18next-resources-for-ts": "^1.6.0",
     "i18next-scanner": "^4.6.0",
+    "lint-staged": "^16.1.2",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.34.1",
     "vite": "^7.0.0"
