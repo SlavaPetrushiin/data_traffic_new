@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import "./App.css"
+import "./App.css";
 
 type Languages = "ru" | "en" | "tr";
 type LanguagesInfo = {
@@ -31,10 +31,10 @@ function App() {
         <li>{t("Отчёты.Погода", "Погода")}</li>
         <li>{t("Отчёты.Индекс", "Индекс")}</li>
         <li>{t("Меню.Аналитика", "Аналитика")}</li>
-        <li>{t("Меню.Индес")}</li>
+        <li>{t("Меню.Индекс")}</li>
       </ul>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -17,7 +17,6 @@ module.exports = {
             extensions: [".js", ".jsx", ".ts", ".tsx"],
         },
         defaultValue: (lng, ns, key) => {
-            console.log({lng, ns, key})
             return key.split('.').pop();
         },
         lngs: ["en", "ru", "tr"],

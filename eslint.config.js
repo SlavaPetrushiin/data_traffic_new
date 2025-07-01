@@ -26,7 +26,8 @@ export default tseslint.config([
     },
     rules: {
       ...i18nextPlugin.configs.recommended.rules,
-      "quotes": ["error", "double"] ,
+      "quotes": ["error", "double"],
+      "semi": ["error", "always"],
       'i18next/no-literal-string': [
         'error',
         {
