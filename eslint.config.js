@@ -5,6 +5,7 @@ import reactRefresh from 'eslint-plugin-react-refresh'
 import tseslint from 'typescript-eslint'
 import { globalIgnores } from 'eslint/config'
 import i18nextPlugin from 'eslint-plugin-i18next'
+import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import css from "@eslint/css";
 
 
@@ -34,6 +35,7 @@ export default tseslint.config([
     },
     plugins: {
       'i18next': i18nextPlugin,
+      'simple-import-sort': simpleImportSort,
     },
     rules: {
       ...i18nextPlugin.configs.recommended.rules,
@@ -46,7 +48,20 @@ export default tseslint.config([
           ignoreAttribute: ['className', 'style', 'role', 'aria-label'],
           ignoreComponent: ['Link', 'NavLink']
         }
-      ]
+      ],
+      'simple-import-sort/imports': [
+        'error',
+        {
+          groups: [
+            ['^react', '^@?\\w'],       // 1. React и npm-пакеты
+            ['^@/'],                     // 2. Алиасы (@/)
+            ['^[^.][^\\.]'],             // 3. Всё, что не начинается с точки (кроме алиасов)
+            ['^\\.\\.(?!/?$)', '^\\.'],  // 4. Родительские и текущие директории
+            ['^.+\\.s?css$']             // 5. Стили (.css/.scss)
+          ]
+        }
+      ],
+      'simple-import-sort/exports': 'warn',
     }
   },
 ])
