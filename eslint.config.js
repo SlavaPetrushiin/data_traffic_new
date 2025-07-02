@@ -5,10 +5,21 @@ import reactRefresh from 'eslint-plugin-react-refresh'
 import tseslint from 'typescript-eslint'
 import { globalIgnores } from 'eslint/config'
 import i18nextPlugin from 'eslint-plugin-i18next'
+import css from "@eslint/css";
 
 
 export default tseslint.config([
   globalIgnores(['dist']),
+  {
+    files: ["**/*.css"],
+    plugins: {
+      css,
+    },
+    language: "css/css",
+    rules: {
+      "css/no-duplicate-imports": "error",
+    },
+  },
   {
     files: ['**/*.{ts,tsx}'],
     extends: [
